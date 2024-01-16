@@ -4,6 +4,7 @@
   --clr-primary: #FF5400;
   --clr-dark-90: #424247;
   --radius: 1rem;
+  --content-max: 500px;
 }
 * {
   margin: 0;
@@ -15,10 +16,8 @@ img {max-width: 100%;}
 button:hover {cursor: pointer; opacity: .75;}
 a:hover {opacity: .75;}
 p {line-height: 1.5;}
-.lead {
-  line-height: 1.5;
-  font-size: 1.12rem;
-}
+p, ul {color: var(--clr-dark-90);}
+
 /* utils */
 .container {
   max-width: 1140px;
@@ -32,6 +31,17 @@ p {line-height: 1.5;}
   border: none;
   color: white;
   font-size: 1rem;
+}
+.sect-title {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+.lead {
+  margin-bottom: 1rem;
+}
+.lead-lg {
+  line-height: 1.5;
+  font-size: 1.12rem;
 }
 
 /* ## .main-nav */
@@ -75,13 +85,14 @@ p {line-height: 1.5;}
 }
 .hero-sect .content {
   text-align: center;
-  max-width: 500px;
+  max-width: var(--content-max);
   margin: auto;
 }
 .hero-sect .content h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
+.hero-sect .content p {color: white;}
 .hero-sect form {
   display: flex;
   gap: 1rem;
@@ -105,9 +116,30 @@ p {line-height: 1.5;}
   font-size: 1rem;
 }
 
+/* ## popular-sect */
+.popular-sect {
+  display: flex;
+  gap: 1rem;
+
+}
+.popular-sect .content {flex: 1.5;}
+.popular-sect .content ul {
+  padding: 1rem;
+  padding-top: 0;
+}
+.popular-sect .content li {margin-bottom: .5rem;}
+.popular-sect .img-box {flex: 1;}
+.popular-sect .img-box img {
+  height: 100%; 
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
 
 @media screen and (max-width: 600px) {
-  .lead {font-size: 1rem;}
+  .sect-title {font-size: 1.75rem;}
+  .lead-lg {font-size: 1rem;}
 
   .main-nav .logo-box img {width: 40px;}
   .main-nav .logo-box h1 {font-size: 1.25rem;}
@@ -121,4 +153,6 @@ p {line-height: 1.5;}
 
   .hero-sect .content h2 {font-size: 2rem;}
   .hero-sect form {flex-direction: column;}
+
+  .popular-sect {flex-direction: column;}
 }
